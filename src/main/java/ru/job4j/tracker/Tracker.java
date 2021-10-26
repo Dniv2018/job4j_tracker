@@ -29,22 +29,18 @@ public class Tracker {
     }
 
     public Item[] findByName(String key) {
-        String[] rsl = new String[items.length];
-        int size = 0;
-        for (int index = 0; index < items.length; index++) {
-            //Item item = items[index];
-            String name = items[index].getName();
-            if (key.equals(name)) {
-                rsl[size] = name;
-                size++;
+        Item[] rsl = new Item[items.length];
+        int size = key.length();
+        int count = 0;
+        for (int index = 0; index < size; index++) {
+            Item item = items[index];
+            if (key.equals(item.getName())) {
+                rsl[count] = item;
+                count++;
             }
         }
         rsl = Arrays.copyOf(rsl, size);
-        Item[] itemResult = new Item[rsl.length];
-        for (int index = 0; index < rsl.length; index++) {
-            itemResult[index].setName(rsl[index]);
-        }
-        return itemResult;
+        return rsl;
     }
 
 }
