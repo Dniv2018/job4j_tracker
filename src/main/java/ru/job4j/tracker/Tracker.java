@@ -24,11 +24,11 @@ public class Tracker {
     }
 
     public Item findById(int id) {
-        //* Находим index по id */
+        /** Находим index по id */
         int index = indexOf(id);
-        //* При нахождении index возвращаем Item, если нет - null */
+        /** При нахождении index возвращаем Item, если нет - null */
         return index != -1 ? items[index] : null;
-       // Item rsl = null;
+       /** Item rsl = null;
         //for (int index = 0; index < size; index++) {
           //  Item item = items[index];
             //if (item.getId() == id) {
@@ -36,7 +36,7 @@ public class Tracker {
                 //break;
             //}
         //}
-        //return rsl;
+        //return rsl;*/
     }
 
     public Item[] findAll() {
@@ -58,14 +58,13 @@ public class Tracker {
 
     public boolean replace(int id, Item item) {
         boolean rsl = false;
-        //Item inItem = new Item();
-        //inItem = findById(id);
+        /** //Item inItem = new Item();
+        //inItem = findById(id);*/
         if (findById(id) == null) return rsl;
         findById(id).setName(item.getName());
         rsl = true;
         return rsl;
-        //inItem = item;
-
+        /**inItem = item;*/
     }
 
 }
